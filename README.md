@@ -1,4 +1,4 @@
-# iWebots
+# WebotsLab
 Interactive Webots with JupyterLab
 
 ## Prerequisites
@@ -17,7 +17,7 @@ Interactive Webots with JupyterLab
 
 1. Clone this repository:
 ```
-git clone https://github.com/RobInLabUJI/iWebots.git && cd iWebots
+git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 ```
 
 2. Install JupyterLab:

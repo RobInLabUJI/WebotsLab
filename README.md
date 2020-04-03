@@ -1,2 +1,32 @@
 # iWebots
 Interactive Webots with JupyterLab
+
+## Prerequisites
+
+* [Webots](https://cyberbotics.com/)
+* [Python 3](https://www.python.org/) with [virtual environments](https://docs.python.org/3/tutorial/venv.html)
+
+#### Tested on:
+
+* Ubuntu 18.04
+* [Webots R2020a-rev1](https://cyberbotics.com/doc/guide/installing-webots)
+* Python 3.6.9
+
+## Usage
+
+1. Clone this repository:
+```
+git clone https://github.com/RobInLabUJI/iWebots.git && cd iWebots
+```
+
+2. Install JupyterLab:
+```
+./install_jupyterlab.bash
+```
+
+3. Launch JupyterLab:
+```
+./launch_jupyterlab.bash
+```
+
+4. Inside JupyterLab, open the notebook `test.ipynb` and follow the instructions.

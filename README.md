@@ -9,7 +9,8 @@ Interactive Webots with JupyterLab
 #### Tested on:
 
 * Ubuntu 18.04
-* [Webots R2020a-rev1](https://cyberbotics.com/doc/guide/installing-webots)
+* [Webots R2020a-rev1](https://github.com/cyberbotics/webots/releases/tag/R2020a-rev1) and
+  [Webots R2019b-rev1](https://github.com/cyberbotics/webots/releases/tag/R2019b-rev1)
 * Python 3.6.9
 
 ## Usage

@@ -3,7 +3,7 @@ Interactive Webots with JupyterLab
 
 ## Prerequisites
 
-* [Webots](https://cyberbotics.com/)
+* [Webots](https://cyberbotics.com/) (R2019a or later)
 * [Python 3](https://www.python.org/) with [virtual environments](https://docs.python.org/3/tutorial/venv.html)
 
 #### Tested on:

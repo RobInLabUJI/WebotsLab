@@ -1,0 +1,59 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  info [
+    "Pioneer 3DX (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  title "Pioneer 3-DX world demo"
+  basicTimeStep 8
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.07625799054510095 0.9711714484633289 0.2258555657221296 2.514191097067306
+  position 3.7451732341056085 3.5808568547576036 -6.794997661114198
+  follow "Pioneer 3-DX"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 6 6
+  floorTileSize 2 2
+  wallThickness 0.1
+  wallHeight 0.4
+  wallAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/red_brick_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    textureTransform TextureTransform {
+      scale 11 13
+    }
+  }
+}
+CardboardBox {
+  translation -1.48831 0.15 0.352735
+  size 0.3 0.3 0.6
+}
+DEF PIONEER_3DX Pioneer3dx {
+  hidden position_0_0 -8.178529347419244e-12
+  hidden position_0_1 -3.1241685498083772e-12
+  hidden position_0_2 3.1241626669606646e-12
+  hidden position_1_0 2.232121477632766e-07
+  hidden rotation_2 1 0 0 2.2302015940987725e-07
+  translation -2.6673457330066925e-08 0.0969436799368752 0.004005949198001582
+  rotation 0.9999999999650097 1.1495240239380919e-07 8.364629683139611e-06 0.03242163949128353
+  controller "rpyc_controller"
+  synchronization FALSE
+  extensionSlot [
+    GPS {
+    }
+    Compass {
+    }
+  ]
+}

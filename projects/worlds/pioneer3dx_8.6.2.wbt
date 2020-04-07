@@ -1,0 +1,60 @@
+#VRML_SIM V8.6 utf8
+WorldInfo {
+  info [
+    "Pioneer 3DX (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  title "Pioneer 3-DX with blinking LEDs moving according to a Braitenberg rule"
+  basicTimeStep 8
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.43097805 0.89576711 0.10890001 0.562701
+  position 0.663146 1.11377 2.59365
+  follow "pioneer3dx"
+}
+Background {
+  skyColor [
+    0.333333 0.666667 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 0.6
+  direction -0.5 -0.7 0.6
+  intensity 0.8
+  castShadows TRUE
+}
+DirectionalLight {
+  ambientIntensity 0.6
+  direction 0.4 -0.7 -0.5
+  intensity 0.8
+}
+RectangleArena {
+  floorSize 6 6
+  floorTextureUrl [
+    "textures/tiles.jpg"
+  ]
+  floorTileSize 2 2
+  wallThickness 0.1
+  wallHeight 0.4
+  wallTextureUrl [
+    "textures/red_brick_wall.jpg"
+  ]
+}
+CardboardBox {
+  translation -1.48831 0.15 0.352735
+  size 0.3 0.3 0.6
+}
+DEF PIONEER_3DX Pioneer3dx {
+  translation -0.613659 0.0975 0.0464224
+  rotation 0 1 0 2.73075
+  controller "rpyc_controller"
+  synchronization FALSE
+  extensionSlot [
+    Compass {
+    }
+    GPS {
+    }
+  ]
+}

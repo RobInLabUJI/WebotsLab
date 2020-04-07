@@ -3,8 +3,8 @@
 import rpyc
 
 class RobotService(rpyc.Service):
-    def __init__(self, robot):
-        super().__init__()
+
+    def setRobot(self, robot):
         self.exposed_robot = robot
     
 from controller import Robot
@@ -14,7 +14,9 @@ robot = Robot()
 
 timestep = int(robot.getBasicTimeStep())
 
-service = RobotService(robot)
+service = RobotService()
+service.setRobot(robot)
+
 t = ThreadedServer(service, port=18861, 
                    protocol_config={'allow_public_attrs': True,})
 t.start()

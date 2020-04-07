@@ -8,6 +8,6 @@ docker run --rm -it \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     -p 8888:8888 \
-    webotslab
+    webotslab:$1
 
 xhost -local:root

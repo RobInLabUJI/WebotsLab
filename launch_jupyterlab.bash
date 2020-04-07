@@ -7,5 +7,5 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib:${WEBOTS_HOME}/lib/
 export PYTHONPATH=${PYTHONPATH}:${WEBOTS_HOME}/lib/python36:${WEBOTS_HOME}/lib/controller/python36
 export PYTHONIOENCODING=UTF-8
 
-cd notebooks && jupyter lab
+jupyter lab --NotebookApp.notebook_dir='notebooks'
 

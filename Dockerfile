@@ -59,5 +59,21 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+RUN rm /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
+
 USER ${NB_USER}
+
+ADD --chown=1000:1000 notebooks/ ${HOME}/notebooks/
+ADD --chown=1000:1000 projects/ ${HOME}/projects/
+
+ADD --chown=1000:1000 Webots-R2020a.conf ${HOME}/.config/Cyberbotics/
+
+ENV WEBOTS_HOME=${HOME}/webots
+
+ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib:${WEBOTS_HOME}/lib/controller \
+    PYTHONPATH=${PYTHONPATH}:${WEBOTS_HOME}/lib/python36:${WEBOTS_HOME}/lib/controller/python36 \
+    PYTHONIOENCODING=UTF-8
+
+CMD ["jupyter", "lab", "--no-browser", "--ip=0.0.0.0", \
+     "--NotebookApp.token=''", "--NotebookApp.notebook_dir='notebooks'" ]
 

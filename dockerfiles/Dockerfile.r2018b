@@ -64,10 +64,11 @@ RUN rm /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
 
 USER ${NB_USER}
 
-ADD --chown=1000:1000 notebooks/ ${HOME}/notebooks/
-ADD --chown=1000:1000 projects/ ${HOME}/projects/
+ADD --chown=1000:1000 notebooks/test_py3.ipynb ${HOME}/notebooks/test.ipynb
+ADD --chown=1000:1000 worlds/r2018b/ ${HOME}/projects/worlds/
+ADD --chown=1000:1000 controllers/ ${HOME}/projects/controllers/
 
-#ADD --chown=1000:1000 Webots-R2020a.conf ${HOME}/.config/Cyberbotics/
+ADD --chown=1000:1000 conf/Webots-R2018b.conf ${HOME}/.config/Cyberbotics/
 
 ENV WEBOTS_HOME=${HOME}/webots
 

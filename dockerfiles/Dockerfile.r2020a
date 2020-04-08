@@ -39,10 +39,9 @@ CMD ["jupyter", "lab", "--no-browser", "--ip=0.0.0.0", "--NotebookApp.token=''"]
 
 #################################### WEBOTS ####################################
 
-RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/R2019a/webots-R2019a-x86-64.tar.bz2 \
-
- && tar xjf webots-R2019a-x86-64.tar.bz2 \
- && rm webots-R2019a-x86-64.tar.bz2
+RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/R2020a-rev1/webots-R2020a-rev1-x86-64.tar.bz2 \
+ && tar xjf webots-R2020a-rev1-x86-64.tar.bz2 \
+ && rm webots-R2020a-rev1-x86-64.tar.bz2
 
 USER root
 
@@ -64,10 +63,12 @@ RUN rm /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
 
 USER ${NB_USER}
 
-ADD --chown=1000:1000 notebooks/ ${HOME}/notebooks/
-ADD --chown=1000:1000 projects/ ${HOME}/projects/
+ADD --chown=1000:1000 notebooks/test_py3.ipynb ${HOME}/notebooks/test.ipynb
+ADD --chown=1000:1000 notebooks/test_py3_extern_controller.ipynb ${HOME}/notebooks/test_extern_controller.ipynb
+ADD --chown=1000:1000 worlds/r2020a/ ${HOME}/projects/worlds/
+ADD --chown=1000:1000 controllers/ ${HOME}/projects/controllers/
 
-ADD --chown=1000:1000 Webots-R2019a.conf ${HOME}/.config/Cyberbotics/
+ADD --chown=1000:1000 conf/Webots-R2020a.conf ${HOME}/.config/Cyberbotics/
 
 ENV WEBOTS_HOME=${HOME}/webots
 

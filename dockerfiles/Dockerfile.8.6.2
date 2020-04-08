@@ -1,4 +1,4 @@
-FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu16.04
+FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu18.04
 
 ################################## JUPYTERLAB ##################################
 
@@ -13,7 +13,7 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip \
+RUN pip install --upgrade pip setuptools \
  && python -m pip install jupyterlab rpyc
 
  ENV SHELL=/bin/bash \
@@ -39,9 +39,10 @@ CMD ["jupyter", "lab", "--no-browser", "--ip=0.0.0.0", "--NotebookApp.token=''"]
 
 #################################### WEBOTS ####################################
 
-RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/R2019a/webots-7.4.3-x86-64.tar.bz2 \
- && tar xjf webots-7.4.3-x86-64.tar.bz2 \
- && rm webots-7.4.3-x86-64.tar.bz2
+RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/R2019a/webots-8.6.2-x86-64.tar.bz2 \
+
+ && tar xjf webots-8.6.2-x86-64.tar.bz2 \
+ && rm webots-8.6.2-x86-64.tar.bz2
 
 USER root
 
@@ -49,7 +50,7 @@ RUN apt-get update \
  && apt-get install -yq --no-install-recommends \
     openjdk-8-jdk git g++ cmake libusb-dev swig python2.7-dev \
     libglu1-mesa-dev libglib2.0-dev libfreeimage-dev libfreetype6-dev \
-    libxml2-dev libzzip-0-13 libssh-gcrypt-dev libssl-dev libboost-dev \
+    libxml2-dev libzzip-0-13 libssh-gcrypt-dev libssl1.0-dev libboost-dev \
     libjpeg8-dev libavcodec-extra libpci-dev libgd-dev libtiff5-dev libzip-dev \
     libreadline-dev libassimp-dev libpng-dev ffmpeg \
     npm libxslt1-dev libssh-4 pbzip2 libpulse-mainloop-glib0 \
@@ -61,17 +62,17 @@ RUN apt-get update \
 
 USER ${NB_USER}
 
-ADD --chown=1000:1000 notebooks/ ${HOME}/notebooks/
-ADD --chown=1000:1000 projects/ ${HOME}/projects/
+ADD --chown=1000:1000 notebooks/test_py2.ipynb ${HOME}/notebooks/test.ipynb
+ADD --chown=1000:1000 worlds/8.6.2/ ${HOME}/projects/worlds/
+ADD --chown=1000:1000 controllers/ ${HOME}/projects/controllers/
 
-ADD --chown=1000:1000 Webots-7.4.3.conf ${HOME}/.config/Cyberbotics/
-RUN mv ${HOME}/.config/Cyberbotics/Webots-7.4.3.conf "${HOME}/.config/Cyberbotics/Webots 7.4.3.conf"
+ADD --chown=1000:1000 conf/Webots-8.6.conf ${HOME}/.config/Cyberbotics/
 
 ENV WEBOTS_HOME=${HOME}/webots
 
-#ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib:${WEBOTS_HOME}/lib/controller \
-#    PYTHONPATH=${PYTHONPATH}:${WEBOTS_HOME}/lib/python36:${WEBOTS_HOME}/lib/controller/python36 \
-#    PYTHONIOENCODING=UTF-8
+ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib:${WEBOTS_HOME}/lib/controller \
+    PYTHONPATH=${PYTHONPATH}:${WEBOTS_HOME}/lib/python36:${WEBOTS_HOME}/lib/controller/python36 \
+    PYTHONIOENCODING=UTF-8
 
 CMD ["jupyter", "lab", "--no-browser", "--ip=0.0.0.0", \
      "--NotebookApp.token=''", "--NotebookApp.notebook_dir='notebooks'" ]

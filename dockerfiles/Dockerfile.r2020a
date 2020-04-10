@@ -79,3 +79,5 @@ ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WEBOTS_HOME}/lib:${WEBOTS_HOME}/lib/con
 CMD ["jupyter", "lab", "--no-browser", "--ip=0.0.0.0", \
      "--NotebookApp.token=''", "--NotebookApp.notebook_dir='notebooks'" ]
 
+EXPOSE 1234
+

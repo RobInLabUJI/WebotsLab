@@ -3,7 +3,7 @@ Interactive Webots with JupyterLab
 
 ## Prerequisites
 
-* [Webots](https://cyberbotics.com/) (R2019a or later)
+* [Webots](https://cyberbotics.com/) (R2019b or later)
 * [Python 3](https://www.python.org/) with [virtual environments](https://docs.python.org/3/tutorial/venv.html)
 
 #### Tested on:
@@ -22,7 +22,7 @@ git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 
 2. Install JupyterLab:
 ```
-./install_jupyterlab.bash
+./install_jupyterlab.bash r2020a
 ```
 
 3. Launch JupyterLab:

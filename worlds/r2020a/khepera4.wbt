@@ -59,4 +59,5 @@ WoodenBox {
 }
 Khepera4 {
   controller "rpyc_controller"
+  synchronization FALSE
 }

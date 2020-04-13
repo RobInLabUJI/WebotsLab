@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t "webotslab:r2020a" .
+docker build -t "webotslab:r2019b" .

@@ -28,7 +28,7 @@ git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 
 2. Install JupyterLab:
 ```
-./install_WebotsLab.bash r2020a
+./install_WebotsLab.bash
 ```
 
 3. Launch JupyterLab:
@@ -58,7 +58,7 @@ git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 
 2. Build WebotsLab Docker image:
 ```
-./build_docker.bash r2020a
+./build_docker.bash
 ```
 
 or pull the Docker image with:
@@ -68,7 +68,7 @@ docker pull robinlab/webotslab:r2020a
 
 3. Launch WebotsLab:
 ```
-./launch_docker.bash r2020a
+./launch_docker.bash
 ```
 
 4. Open your favourite browser, connect to http://localhost:8888, open the notebook `test.ipynb` and follow the instructions.

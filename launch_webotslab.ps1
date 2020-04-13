@@ -7,7 +7,7 @@ $Env:path += $Env:WEBOTS_HOME+"\lib;"+$Env:WEBOTS_HOME+"\lib\controller;"+$Env:W
 $Env:pythonpath += $Env:WEBOTS_HOME+"\lib\controller\python37;"
 $Env:PYTHONIOENCODING = "UTF-8"
 
-cd .\wlenv\stream && python3 server.py
+(cd .\wlenv\stream) -and (python3 server.py)
 
 exit
 

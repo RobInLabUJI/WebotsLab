@@ -50,6 +50,8 @@ RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/d
  && tar xjf webots-R2020a-rev1-x86-64.tar.bz2 \
  && rm webots-R2020a-rev1-x86-64.tar.bz2
 
+EXPOSE 8888
+
 ADD --chown=1000:1000 notebooks/test_py3_stream.ipynb ${ENVDIR}/notebooks/test.ipynb
 ADD --chown=1000:1000 projects/ ${ENVDIR}/projects/
 ADD --chown=1000:1000 stream/ ${ENVDIR}/stream/
@@ -58,8 +60,4 @@ ADD --chown=1000:1000 conf/Webots-R2020a.conf ${HOME}/.config/Cyberbotics/
 ADD --chown=1000:1000 launch_WebotsLab_docker.bash ${HOME}/
 
 CMD ["./launch_WebotsLab_docker.bash"]
-
-EXPOSE 1234
-EXPOSE 8888
-EXPOSE 8889
 

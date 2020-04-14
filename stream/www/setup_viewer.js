@@ -34,7 +34,8 @@ function connect() {
   var playerDiv = document.getElementById('playerDiv');
   view = new webots.View(playerDiv, mobileDevice);
   view.broadcast = false;
-  view.open('ws://' + ipInput.value + ':' + portInput.value);
+/*  view.open('ws://' + ipInput.value + ':' + portInput.value); */
+  view.open('ws://' + ipInput.value + ':8888/proxy/' + portInput.value);
   connectButton.value = 'Disconnect';
   connectButton.onclick = disconnect;
   ipInput.disabled = true;

@@ -59,7 +59,7 @@ DEF PIONEER_3DX Pioneer3dx {
   translation -2.6673332370037603e-08 0.0969436799368752 0.0040059491980048365
   rotation 0.9999999999650091 1.1512345942827447e-07 8.364708519455054e-06 0.032421639491283454
   controller "rpyc_controller"
-  synchronization FALSE
+  synchronization TRUE
   extensionSlot [
     GPS {
     }

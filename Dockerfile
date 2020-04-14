@@ -51,6 +51,9 @@ RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/d
  && rm webots-R2020a-rev1-x86-64.tar.bz2
 
 ADD --chown=1000:1000 notebooks/test_py3_stream.ipynb ${ENVDIR}/notebooks/test.ipynb
+ADD --chown=1000:1000 notebooks/pioneer3dx_collision_avoidance.ipynb ${ENVDIR}/notebooks/
+ADD --chown=1000:1000 notebooks/khepera4.ipynb ${ENVDIR}/notebooks/
+ADD --chown=1000:1000 notebooks/controller.py ${ENVDIR}/notebooks/
 ADD --chown=1000:1000 projects/ ${ENVDIR}/projects/
 ADD --chown=1000:1000 stream/ ${ENVDIR}/stream/
 

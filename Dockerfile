@@ -44,7 +44,7 @@ WORKDIR ${HOME}
 ENV ENVDIR=${HOME}/wlenv
 RUN python3 -m venv ${ENVDIR} \
  && source ${ENVDIR}/bin/activate \
- && pip install jupyterlab rpyc
+ && pip install jupyterlab rpyc numpy matplotlib
 
 RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/R2020a-rev1/webots-R2020a-rev1-x86-64.tar.bz2 \
  && tar xjf webots-R2020a-rev1-x86-64.tar.bz2 \
@@ -53,6 +53,7 @@ RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/d
 ADD --chown=1000:1000 notebooks/test_py3_stream.ipynb ${ENVDIR}/notebooks/test.ipynb
 ADD --chown=1000:1000 notebooks/pioneer3dx_collision_avoidance.ipynb ${ENVDIR}/notebooks/
 ADD --chown=1000:1000 notebooks/khepera4.ipynb ${ENVDIR}/notebooks/
+ADD --chown=1000:1000 notebooks/e-puck_line.ipynb ${ENVDIR}/notebooks/
 ADD --chown=1000:1000 notebooks/controller.py ${ENVDIR}/notebooks/
 ADD --chown=1000:1000 projects/ ${ENVDIR}/projects/
 ADD --chown=1000:1000 stream/ ${ENVDIR}/stream/

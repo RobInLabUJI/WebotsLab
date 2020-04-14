@@ -6,7 +6,7 @@ WorldInfo {
     "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
   ]
   title "Pioneer 3-DX world demo"
-  basicTimeStep 8
+  basicTimeStep 16
 }
 Viewpoint {
   fieldOfView 0.660595

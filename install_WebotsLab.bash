@@ -4,7 +4,7 @@ ENVDIR=./wlenv
 
 python3 -m venv ${ENVDIR}
 source ${ENVDIR}/bin/activate
-pip install jupyterlab rpyc
+pip install jupyterlab rpyc numpy matplotlib
 
 cp -R projects/ ${ENVDIR}/
 

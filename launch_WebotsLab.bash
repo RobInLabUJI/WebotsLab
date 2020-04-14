@@ -12,7 +12,7 @@ export PYTHONIOENCODING=UTF-8
 cd ${ENVDIR}/stream && python3 server.py &
 SERVER_ID=$!
 
-cd ${ENVDIR} && ${WEBOTS_HOME}/webots --batch --stream --minimize ./projects/worlds/pioneer3dx.wbt  &
+cd ${ENVDIR} && ${WEBOTS_HOME}/webots --batch --stream --minimize ./projects/worlds/khepera4.wbt  &
 WEBOTS_ID=$!
 
 cd ${ENVDIR} && jupyter lab --NotebookApp.notebook_dir='notebooks'

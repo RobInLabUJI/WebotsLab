@@ -46,9 +46,13 @@ DEF OBSTACLE3 Solid {
   boundingObject USE BOX3
 }
 DEF EPUCK E-puck {
-  translation 0.012 0 0.175
-  rotation 0 1 0 1.5
-  controller "rpyc_controller"
+  hidden position_0_0 3.099856903595299e-08
+  hidden position_0_1 -3.0998716482599775e-08
+  hidden rotation_1 -1 0 0 2.9802322387695313e-08
+  hidden rotation_2 1 0 0 2.9802322387695313e-08
+  translation 0.011999999988272777 -6.392987264390929e-05 0.1750000001662341
+  rotation 3.0220493513808756e-06 0.9999999999901843 3.240170591920896e-06 1.4999999962225998
+  controller "<extern>"
   groundSensorsSlot [
     E-puckGroundSensors {
     }

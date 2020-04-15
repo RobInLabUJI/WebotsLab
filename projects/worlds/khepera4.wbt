@@ -58,6 +58,5 @@ WoodenBox {
   size 0.2 0.1 0.3
 }
 Khepera4 {
-  controller "rpyc_controller"
-  synchronization TRUE
+  controller "<extern>"
 }

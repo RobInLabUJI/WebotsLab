@@ -46,24 +46,19 @@ RUN python3 -m venv ${ENVDIR} \
  && source ${ENVDIR}/bin/activate \
  && pip install jupyterlab rpyc numpy matplotlib
 
-RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/R2020a-rev1/webots-R2020a-rev1-x86-64.tar.bz2 \
- && tar xjf webots-R2020a-rev1-x86-64.tar.bz2 \
- && rm webots-R2020a-rev1-x86-64.tar.bz2
+RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/nightly_15_4_2020/webots-R2020a-rev2-x86-64.tar.bz2 \
+ && tar xjf webots-R2020a-rev2-x86-64.tar.bz2 \
+ && rm webots-R2020a-rev2-x86-64.tar.bz2
 
-ADD --chown=1000:1000 notebooks/test_py3_stream.ipynb ${ENVDIR}/notebooks/test.ipynb
-ADD --chown=1000:1000 notebooks/pioneer3dx_collision_avoidance.ipynb ${ENVDIR}/notebooks/
-ADD --chown=1000:1000 notebooks/khepera4.ipynb ${ENVDIR}/notebooks/
-ADD --chown=1000:1000 notebooks/e-puck_line.ipynb ${ENVDIR}/notebooks/
-ADD --chown=1000:1000 notebooks/controller.py ${ENVDIR}/notebooks/
+ADD --chown=1000:1000 notebooks/ ${ENVDIR}/notebooks/
 ADD --chown=1000:1000 projects/ ${ENVDIR}/projects/
 ADD --chown=1000:1000 stream/ ${ENVDIR}/stream/
 
 ADD --chown=1000:1000 conf/Webots-R2020a.conf ${HOME}/.config/Cyberbotics/
-ADD --chown=1000:1000 launch_WebotsLab_docker.bash ${HOME}/
+ADD --chown=1000:1000 WebotsLab_in_Docker.bash ${HOME}/
 
-CMD ["./launch_WebotsLab_docker.bash"]
+CMD ["./WebotsLab_in_Docker.bash"]
 
 EXPOSE 1234
 EXPOSE 8888
 EXPOSE 8889
-

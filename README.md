@@ -26,17 +26,17 @@ You can set up WebotsLab with two different configurations:
 git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 ```
 
-2. Install JupyterLab:
+2. Install WebotsLab in a Python virtual environment:
 ```
 ./install_WebotsLab.bash
 ```
 
-3. Launch JupyterLab:
+3. Launch WebotsLab:
 ```
 ./launch_WebotsLab.bash
 ```
 
-4. JupyterLab will appear in a new browser window or tab; open the notebook `test.ipynb` and follow the instructions.
+4. Webots will start and JupyterLab will appear in a new browser window or tab. Open a world in Webots, and select the corresponding notebook in Jupyter.
 
 ## The *Docker* way
 
@@ -58,7 +58,7 @@ git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 
 2. Build WebotsLab Docker image:
 ```
-./build_docker.bash
+./build_WebotsLab_in_Docker.bash
 ```
 
 or pull the Docker image with:
@@ -68,7 +68,9 @@ docker pull robinlab/webotslab:r2020a
 
 3. Launch WebotsLab:
 ```
-./launch_docker.bash
+./launch_WebotsLab_in_Docker.bash
 ```
 
-4. Open your favourite browser, connect to http://localhost:8888, open the notebook `test.ipynb` and follow the instructions.
+4. Open your favourite browser, connect to http://localhost:8888 in a tab/window for JupyterLab, and to http://localhost:8889/static/index.html in another tab/window for the Webots streaming viewer.
+
+

@@ -20,12 +20,12 @@ Interactive Webots with JupyterLab. Program the controller of a simulated robot 
 git clone https://github.com/RobInLabUJI/WebotsLab.git && cd WebotsLab
 ```
 
-2. Install JupyterLab:
+2. Install WebotsLab in a Python virtual environment:
 ```
 ./install_WebotsLab.bash
 ```
 
-3. Launch JupyterLab:
+3. Launch WebotsLab:
 ```
 ./launch_WebotsLab.bash
 ```

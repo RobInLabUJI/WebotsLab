@@ -60,4 +60,8 @@ WoodenBox {
 Khepera4 {
   controller "<extern>"
   synchronization FALSE
+  turretSlot [
+    GPS {
+    }
+  ]
 }

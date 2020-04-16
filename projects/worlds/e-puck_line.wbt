@@ -53,6 +53,7 @@ DEF EPUCK E-puck {
   translation 0.011999999988272777 -6.392987264390929e-05 0.1750000001662341
   rotation 3.0220493513808756e-06 0.9999999999901843 3.240170591920896e-06 1.4999999962225998
   controller "<extern>"
+  synchronization FALSE
   groundSensorsSlot [
     E-puckGroundSensors {
     }

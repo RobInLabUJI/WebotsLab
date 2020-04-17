@@ -29,7 +29,8 @@ DEF PIONEER_3DX Pioneer3dx {
   synchronization FALSE
   extensionSlot [
     Kinect {
-      translation 0 0.15 -0.12
+      translation 0 0.15 -0.13
+      rotation 1 0 0 -0.35
       width 150
       height 100
     }

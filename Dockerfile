@@ -11,9 +11,9 @@ RUN apt-get update \
     libdbus-1-3 libfreeimage-dev libfreetype6-dev \
     libgd-dev libglu1-mesa-dev libglib2.0-dev libgl1-mesa-dev libgl1-mesa-glx \
     libjpeg8-dev libnspr4 libnss3 libpci-dev libpng-dev libreadline-dev \
-    libssh-gcrypt-dev libssh-4 libssl1.0-dev libtiff5-dev libusb-dev \
-    libxcomposite1 libxcursor1 libxkbcommon-x11-dev libxi6 libxrender1 libxss1 \
-    libxml2-dev libxslt1-dev libzip-dev libzzip-0-13 \
+    libspatialindex-dev libssh-gcrypt-dev libssh-4 libssl1.0-dev libtiff5-dev \
+    libusb-dev libxcomposite1 libxcursor1 libxkbcommon-x11-dev libxi6 \
+    libxrender1 libxss1 libxml2-dev libxslt1-dev libzip-dev libzzip-0-13 \
     locales lsb-release mesa-utils npm openjdk-8-jdk pbzip2 \
     python3-pip python3-setuptools python3-venv python3.6-dev python3.7-dev \ 
     swig unzip wget xpra xorg-dev xserver-xorg-video-dummy xvfb zip \ 
@@ -44,7 +44,7 @@ WORKDIR ${HOME}
 ENV ENVDIR=${HOME}/wlenv
 RUN python3 -m venv ${ENVDIR} \
  && source ${ENVDIR}/bin/activate \
- && pip install jupyterlab numpy matplotlib opencv-python
+ && pip install jupyterlab numpy matplotlib opencv-python shapely rtree
 
 RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/nightly_15_4_2020/webots-R2020a-rev2-x86-64.tar.bz2 \
  && tar xjf webots-R2020a-rev2-x86-64.tar.bz2 \

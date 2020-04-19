@@ -450,14 +450,6 @@ Can {
   rotation 0 1 0 1.32183
   name "can 4"
 }
-E-puck {
-  translation 2.69279 0.549968 7.16904
-  rotation 0.0024334408120733207 -0.9999933449613864 0.0027181609134859365 1.67692
-  groundSensorsSlot [
-    E-puckGroundSensors {
-    }
-  ]
-}
 Cabinet {
   translation 6.4326 0 3.46807
   rotation 0 1 0 4.71239
@@ -518,13 +510,9 @@ PortraitPainting {
 LandscapePainting {
   translation 4.92523 1.62868 0.184484
 }
-Television {
-  translation 2.15471 1.5596 3.43287
-}
 Create {
   translation 4.2 0.045 4.65
   rotation 0 1 0 -3.12513
-}
-CreateWall {
-  translation 3.53117 0 3.235
+  controller "<extern>"
+  synchronization FALSE
 }

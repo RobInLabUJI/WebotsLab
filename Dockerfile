@@ -44,7 +44,7 @@ WORKDIR ${HOME}
 ENV ENVDIR=${HOME}/wlenv
 RUN python3 -m venv ${ENVDIR} \
  && source ${ENVDIR}/bin/activate \
- && pip install jupyterlab numpy matplotlib opencv-python shapely rtree
+ && pip install jupyterlab matplotlib numpy opencv-python pillow rtree shapely
 
 RUN wget --no-check-certificate https://github.com/cyberbotics/webots/releases/download/nightly_15_4_2020/webots-R2020a-rev2-x86-64.tar.bz2 \
  && tar xjf webots-R2020a-rev2-x86-64.tar.bz2 \

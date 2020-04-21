@@ -8,4 +8,4 @@ pip install ikpy jupyterlab matplotlib numpy opencv-python pillow shapely
 
 cp -R projects/  ${ENVDIR}/
 cp -R notebooks/ ${ENVDIR}/
-
+cp -R stream/ ${ENVDIR}
